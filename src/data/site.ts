@@ -48,12 +48,12 @@ export const experience: Entry[] = [
     role: 'CS Development Team Lead',
     duration: 'Dec 2023 - Aug 2026',
     bullets: [
-      'Project managing a team of 10-20 people to develop firmware for FSAE electric vehicles',
-      'Designing and implementing Vehicle Control Unit (VCU) using STM32F7 with FreeRTOS for real-time motor control and safety systems',
-      'Creating driver dashboard with STM32F7 Discovery Board utilizing FreeRTOS for concurrent CAN bus communication and display updates',
-      'Leading development of custom Battery Management System using BQ79616 ICs and Teensy 4.1 for cell monitoring and CAN bus integration',
-      'Overseeing Thermistor Sense Module design using STM32 Bluepill and ESP-32 for thermal monitoring',
-      'Presenting software design choices to panels of alumni and industry professionals in design reviews',
+      'Project managed a team of 10-20 people to develop firmware for FSAE electric vehicles',
+      'Designed and implemented Vehicle Control Unit (VCU) using STM32F7 with FreeRTOS for real-time motor control and safety systems',
+      'Created driver dashboard with STM32F7 Discovery Board utilizing FreeRTOS for concurrent CAN bus communication and display updates',
+      'Led development of custom Battery Management System using BQ79616 ICs and Teensy 4.1 for cell monitoring and CAN bus integration',
+      'Supervised Thermistor Sense Module design using STM32 Bluepill and ESP-32 for thermal monitoring',
+      'Presented software design choices to panels of alumni and industry professionals in design reviews',
     ],
   },
   {
