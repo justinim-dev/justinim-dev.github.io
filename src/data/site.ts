@@ -13,7 +13,7 @@ export const site = {
 };
 
 export const about =
-  "Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in working with STM32 microcontrollers, real-time operating systems, and CAN bus communication. As a technical lead at Highlander Racing, I manage firmware development for Formula SAE electric vehicles. I draw inspiration from science fiction and hope to apply those ideas to projects that improve living standards and address environmental challenges.";
+  "Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in programming microcontrollers using state machines and real-time operating systems with integration into products with communication methods such as SPI and CAN Bus. I am currently working as an EV Engineering Intern at Formosa EV, where I contribute to the development of their next generation Vehicle Control Unit. I draw inspiration from science fiction and hope to apply those ideas to projects that improve living standards and address environmental challenges.";
 
 export type Entry = {
   name: string;
@@ -32,9 +32,21 @@ export const education: Entry[] = [
 
 export const experience: Entry[] = [
   {
+    name: 'Formosa EV',
+    role: 'EV Engineering Intern',
+    duration: 'Jun 2026 - Present',
+    bullets: [
+      'Developing embedded software for electric vehicles using RTOS and State Machines',
+      'Contributing to the design and implementation of custom state machines on S32K344 microcontrollers for vehicle control',
+      'Collaborating with cross-functional teams in the US and Taiwan to design and develop a working product against strict timelines',
+      'Participating in product planning for CAN Bus keypads for gear selection',
+      'Integrating and testing cell phone app communications over Bluetooth to the vehicle control unit for EV configuration and data capture',
+    ],
+  },
+  {
     name: 'UCR Highlander Racing',
     role: 'CS Development Team Lead',
-    duration: 'Dec 2023 - Present',
+    duration: 'Dec 2023 - Aug 2026',
     bullets: [
       'Project managing a team of 10-20 people to develop firmware for FSAE electric vehicles',
       'Designing and implementing Vehicle Control Unit (VCU) using STM32F7 with FreeRTOS for real-time motor control and safety systems',
