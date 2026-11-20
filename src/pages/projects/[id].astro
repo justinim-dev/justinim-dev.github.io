@@ -1,0 +1,93 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+---
+
+<Base
+  title={`${data.pageTitle ?? data.title} | ${site.name}`}
+  description={data.subtitle}
+  footerTagline={data.footerTagline}
+>
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <h1>{data.title}</h1>
+      <p>{data.subtitle}</p>
+      <a href="/#projects" class="button">← Back to Projects</a>
+    </div>
+  </section>
+
+  {
+    data.gallery.length > 0 && (
+      <section class="project-pictures">
+        <div class="container">
+          <h2>Project Gallery</h2>
+          <div class="picture-grid">
+            {data.gallery.map((img) => (
+              <div class="picture-item" data-aos="fade-up">
+                <img src={img.src} alt={img.alt} loading="lazy" />
+                {img.caption && <p>{img.caption}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="project-description">
+    <div class="container">
+      <h2>Project Description</h2>
+      <div class="description-content">
+        <div class="description-text">
+          <Content />
+        </div>
+
+        <div class="project-details">
+          <h3>Project Details</h3>
+          {
+            data.details.map((d) => (
+              <div class="detail-item">
+                <strong>{d.label}:</strong> {d.value}
+              </div>
+            ))
+          }
+          {
+            data.links.length === 1 && (
+              <div class="detail-item">
+                <a href={data.links[0].url} target="_blank" rel="noopener" class="github-button">
+                  {data.links[0].label}
+                </a>
+              </div>
+            )
+          }
+          {
+            data.links.length > 1 && (
+              <div class="detail-item">
+                <div class="github-dropdown">
+                  <button class="github-button dropdown-toggle">View on GitHub ▾</button>
+                  <div class="dropdown-menu">
+                    {data.links.map((l) => (
+                      <a href={l.url} target="_blank" rel="noopener">
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

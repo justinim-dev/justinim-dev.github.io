@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { site, about, education, experience, skills } from '../data/site';
+
+const projects = (await getCollection('projects', (p) => p.data.listed)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base title={`${site.name} | Engineering Portfolio`}>
+  <section id="home" class="home-container">
+    <div class="home-text">
+      <h1>{site.name}</h1>
+      <p>{site.tagline}</p>
+      <a href="#projects" class="button">View Projects</a>
+    </div>
+    <div class="home-image">
+      <img src={site.profileImage} alt={`${site.name} photo`} />
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>{about}</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="experience-grid">
+      {education.map((e) => <EntryCard entry={e} />)}
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-grid">
+      {experience.map((e) => <EntryCard entry={e} />)}
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      {
+        projects.map((p) => (
+          <div class="project-card">
+            <h3>{p.data.cardTitle ?? p.data.title}</h3>
+            {p.data.date && <span class="project-duration">{p.data.date}</span>}
+            <p>{p.data.summary ?? p.data.subtitle}</p>
+            <a href={`/projects/${p.id}/`} class="button">View Project</a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      {
+        skills.map((s) => (
+          <div class="skill-card">
+            <h3>{s.title}</h3>
+            <ul>
+              {s.items.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>

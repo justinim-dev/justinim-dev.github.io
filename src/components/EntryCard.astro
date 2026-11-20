@@ -1,0 +1,24 @@
+---
+import type { Entry } from '../data/site';
+
+const { entry } = Astro.props as { entry: Entry };
+---
+
+<div class="experience-card">
+  <div class="experience-header">
+    <h3>{entry.name}</h3>
+    <span class="experience-role">{entry.role}</span>
+    <span class="experience-duration">{entry.duration}</span>
+  </div>
+  {
+    entry.bullets && (
+      <div class="experience-content">
+        <ul>
+          {entry.bullets.map((b) => (
+            <li>{b}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>
