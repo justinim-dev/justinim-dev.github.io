@@ -10,10 +10,22 @@ export const site = {
   github: 'https://github.com/justinim-dev',
   linkedin: 'https://linkedin.com/in/justin-h-im',
   profileImage: '/images/profile.jpg',
+  resume: '/resume.pdf', // put the file at public/resume.pdf
 };
 
 export const about =
-  "Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in programming microcontrollers using state machines and real-time operating systems with integration into products with communication methods such as SPI and CAN Bus. I am currently working as an EV Engineering Intern at Formosa EV, where I contribute to the development of their next generation Vehicle Control Unit. I draw inspiration from science fiction and hope to apply those ideas to projects that improve living standards and address environmental challenges.";
+  "Hello! My name is Justin Im, and I am currently in my Senior Year as a Robotics Engineering Student at the University of California, Riverside. I was born and raised in California, where I grew to love science fiction, robots, and cars. If I'm not programming, I'm probably working on my car (1999 Mitsubishi 3000GT) or consuming some sort of science fiction media. Currently, I'm fusing my love for cars and embedded systems at my internship at Formosa EV! More details in my resume:";
+
+// Content for the About page (/about/). The intro paragraph there is `about` above.
+export const aboutPage = {
+  // Photo at the top of the About page (the home page uses profileImage above).
+  image: '/images/me-sunset.png',
+  // Short facts shown in a strip under the intro.
+  facts: [
+    { label: 'Currently', value: 'EV Engineering Intern at Formosa EV' },
+    { label: 'Focus', value: 'Embedded Systems & Firmware' },
+  ],
+};
 
 export type Entry = {
   name: string;

@@ -10,20 +10,20 @@ const projects = (await getCollection('projects', (p) => p.data.listed)).sort(
 ---
 
 <Base title={`${site.name} | Engineering Portfolio`}>
-  <section id="home" class="home-container">
-    <div class="home-text">
-      <h1>{site.name}</h1>
-      <p>{site.tagline}</p>
-      <a href="#projects" class="button">View Projects</a>
-    </div>
-    <div class="home-image">
+  <section id="home" class="page-hero page-hero--reverse">
+    <div class="page-hero-image" data-aos="fade-left">
       <img src={site.profileImage} alt={`${site.name} photo`} />
     </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>{about}</p>
+    <div class="page-hero-text" data-aos="fade-right">
+      <span class="eyebrow">Engineering Portfolio</span>
+      <h1>{site.name}</h1>
+      <p class="page-hero-tagline">{site.tagline}</p>
+      <p>{about}</p>
+      <div class="button-row">
+        <a href="#projects" class="button">View Projects</a>
+        <a href="/about/" class="button button-outline">More About Me</a>
+      </div>
+    </div>
   </section>
 
   <section id="education">

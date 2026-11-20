@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, about, aboutPage } from '../data/site';
+---
+
+<Base title={`About | ${site.name}`} description={`About ${site.name}: ${site.tagline}`}>
+  <section class="page-hero">
+    <div class="page-hero-image" data-aos="fade-right">
+      <img src={aboutPage.image} alt={`${site.name} at sunset`} class="about-photo" />
+    </div>
+    <div class="page-hero-text" data-aos="fade-left">
+      <span class="eyebrow">About Me</span>
+      <h1>{site.name}</h1>
+      <p class="page-hero-tagline">{site.tagline}</p>
+      <p>{about}</p>
+      <div class="button-row">
+        <a href={site.resume} class="button" target="_blank" rel="noopener">View Resume</a>
+        <a href={`mailto:${site.email}`} class="button button-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-facts" data-aos="fade-up">
+    {
+      aboutPage.facts.map((f) => (
+        <div class="fact">
+          <span class="fact-label">{f.label}</span>
+          <span class="fact-value">{f.value}</span>
+        </div>
+      ))
+    }
+  </section>
+</Base>
