@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- tile -->
+  <rect width="64" height="64" rx="14" fill="#000"/>
+  <g fill="#fff">
+    <!-- J: vertical bar + quarter-ring hook -->
+    <rect x="25" y="10" width="8" height="30"/>
+    <path d="M33 40 A16 16 0 0 1 17 56 L17 48 A8 8 0 0 0 25 40 Z"/>
+    <!-- I: floating circle + bar -->
+    <circle cx="43" cy="14.5" r="4.5"/>
+    <rect x="39" y="24" width="8" height="32"/>
+  </g>
+</svg>
