@@ -4,7 +4,7 @@
 export const site = {
   name: 'Justin Im',
   tagline: 'Engineer | Developer | Creator',
-  footerTagline: 'CS Development Team Lead at UCR Highlander Racing',
+  footerTagline: 'EV Engineering Intern @Formosa EV',
   email: 'imjustin679@gmail.com',
   phone: '+1 (925) 399 9234',
   github: 'https://github.com/justinim-dev',
